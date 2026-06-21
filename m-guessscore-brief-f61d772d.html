@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>足球竞猜 · 再次相遇的角落</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f0;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2c2b28;
+            line-height: 1.8;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* hero — 干净留白 */
+        .hero {
+            margin-bottom: 3.5rem;
+            padding: 2.5rem 0 1rem;
+            border-bottom: 1px solid #e3ddd1;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            color: #3b3a36;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #7a756c;
+            font-style: italic;
+            border-left: 3px solid #c9b99a;
+            padding-left: 1.2rem;
+        }
+
+        /* 信息卡片 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: #fffcf8;
+            border: 1px solid #e5ddd1;
+            border-radius: 20px;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4d4a42;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e8dfcf;
+            display: inline-block;
+        }
+
+        .card p, .card li {
+            font-size: 0.98rem;
+            color: #413f3a;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.8rem;
+        }
+
+        .card ul li {
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0.5rem;
+            color: #b8a78c;
+            font-weight: bold;
+        }
+
+        /* 引用 / 提示框 */
+        .notice-box {
+            background: #f3efe7;
+            border-left: 6px solid #b6a68b;
+            border-radius: 12px;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0;
+            font-size: 0.95rem;
+            color: #3f3b33;
+        }
+
+        .notice-box strong {
+            font-weight: 600;
+            color: #5b4f3b;
+        }
+
+        /* 自然链接段落 */
+        .link-paragraph {
+            background: #fffcf8;
+            border: 1px solid #e5ddd1;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        .link-paragraph a {
+            color: #6f5b3f;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8a68b;
+            transition: border 0.2s;
+        }
+
+        .link-paragraph a:hover {
+            border-bottom: 1px solid #6f5b3f;
+        }
+
+        /* FAQ 摘要 (极简) */
+        .faq-mini {
+            margin: 2.8rem 0 1.5rem;
+        }
+
+        .faq-mini details {
+            background: #fffcf8;
+            border: 1px solid #e5ddd1;
+            border-radius: 16px;
+            padding: 1rem 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #4d4940;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .faq-mini details[open] summary {
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-mini details p {
+            font-size: 0.93rem;
+            color: #5f5a50;
+            padding-left: 0.3rem;
+        }
+
+        /* 底部 */
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e3ddd1;
+            font-size: 0.85rem;
+            color: #9d9588;
+        }
+
+        /* 响应式 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .notice-box {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .link-paragraph {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .card-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .card {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>某个熟悉的页面</h1>
+        <div class="sub">收藏 · 回访 · 慢慢习惯</div>
+    </div>
+
+    <!-- 主视觉卡片: 为什么再次回来 -->
+    <div class="card-grid">
+        <div class="card">
+            <h2>为什么总想回来</h2>
+            <p>最初可能是偶然点开，后来发现每次打开都有新的赛前分析和实时数据。没有浮夸的推送，只有干净的界面和清晰的赛程——于是不知不觉把它留在了书签栏。</p>
+            <ul>
+                <li>赛前阵容、伤停、天气参考</li>
+                <li>实时赔率与历史走势</li>
+                <li>无广告弹窗，专注内容本身</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>适合怎样的人</h2>
+            <p>不是所有人都需要复杂的分析工具。如果你只是周末想看看比赛背景，或者想记录自己对某场较量的判断，这里刚刚好。</p>
+            <ul>
+                <li>喜欢看球但不想被数据淹没</li>
+                <li>偶尔想验证自己的直觉</li>
+                <li>习惯用浏览器收藏夹整理兴趣站点</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示框：关于收藏与关注 -->
+    <div class="notice-box">
+        <strong>📌 一个小建议</strong><br>
+        如果你觉得这个页面值得偶尔回来，不妨把它加入浏览器收藏夹，或者记在备忘录里。很多好用的工具都是在反复访问中才慢慢熟悉的。
+    </div>
+
+    <!-- 自然链接段落 —— 句子中嵌入“足球竞猜” -->
+    <div class="link-paragraph">
+        <p>从一开始的赛程查询，到后来习惯性点开看看最新的动态——<a href="https://m-guessscore.com">足球竞猜</a>这个站点提供的不是花哨的承诺，而是一种稳定的陪伴。没有强制注册，没有信息轰炸，只有平实的内容和持续更新的数据。如果你也喜欢在比赛前花几分钟了解双方状态，不妨把它放进你的常用列表。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <details>
+            <summary>这个页面需要注册或付费吗？</summary>
+            <p>完全不需要。所有公开内容均可直接浏览，无需登录，也没有隐藏收费项目。</p>
+        </details>
+        <details>
+            <summary>数据更新及时吗？</summary>
+            <p>赛前信息通常在开赛前数小时更新，实时数据依赖官方信号源，延迟极低。建议赛前半小时再次确认阵容。</p>
+        </details>
+        <details>
+            <summary>为什么我上次收藏的链接失效了？</summary>
+            <p>根域名不变，请确认收藏的是 <code>https://m-guessscore.com</code>，部分二级页面可能会调整，但首页始终可用。</p>
+        </details>
+    </div>
+
+    <!-- 再一个自然引用 —— 温柔收尾 -->
+    <div class="notice-box" style="border-left-color: #cfbba3;">
+        <strong>💬 一点感受</strong><br>
+        好的工具不需要天天挂在嘴边，但当你需要的时候，它就在那里。把网址留在收藏夹里，下次想看看某场比赛的背景信息时，几步就能找到。
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>偶尔回来 · 保持关注</span>
+    </div>
+
+</div>
+</body>
+</html>
