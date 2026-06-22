@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杂志专题 · 金年会</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f4ed;
+      font-family: "Noto Serif SC", "Source Han Serif CN", "Times New Roman", Georgia, serif;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #fefcf7;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      padding: 2.8rem 2.2rem;
+      border-radius: 24px;
+    }
+
+    /* 首页横幅 */
+    .hero {
+      border-left: 6px solid #b09b7b;
+      padding: 1.8rem 1.8rem 1.8rem 2rem;
+      background: #f9f5ec;
+      margin-bottom: 2.8rem;
+      border-radius: 0 20px 20px 0;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #3b352d;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #7a6f5e;
+      border-top: 1px solid #d6cdbc;
+      padding-top: 0.6rem;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    /* 背景说明 block */
+    .intro-background {
+      background: #f3efe7;
+      padding: 1.8rem 2rem;
+      border-radius: 18px;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .intro-background::before {
+      content: "⏳";
+      font-size: 1.8rem;
+      position: absolute;
+      top: -0.6rem;
+      left: 1rem;
+      opacity: 0.3;
+    }
+
+    .intro-background p {
+      font-size: 1.05rem;
+    }
+
+    /* 三段自然介绍——卡片风格，但保留文章排版 */
+    .article-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .article-card {
+      border-bottom: 1px solid #e7e0d3;
+      padding-bottom: 1.8rem;
+    }
+
+    .article-card:last-child {
+      border-bottom: none;
+    }
+
+    .article-card h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #4b4237;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid #c6b295;
+    }
+
+    .article-card p {
+      margin-bottom: 0.8rem;
+    }
+
+    /* 引用提示框 */
+    .highlight-box {
+      background: #eee9df;
+      border-left: 5px solid #b6a68b;
+      padding: 1.4rem 1.8rem;
+      margin: 1.8rem 0 2.2rem 0;
+      border-radius: 0 16px 16px 0;
+      font-size: 0.98rem;
+      color: #3f392f;
+    }
+
+    .highlight-box span {
+      display: block;
+      font-weight: 500;
+      color: #7d6f59;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      margin-top: 2rem;
+      padding: 1.6rem 2rem;
+      background: #f6f2ea;
+      border-radius: 40px 12px 40px 12px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .footer-note p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-note a {
+      color: #6f5e45;
+      text-decoration: none;
+      border-bottom: 1px dashed #b9aa92;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .footer-note a:hover {
+      color: #3b2e1f;
+      border-bottom: 1px solid #3b2e1f;
+    }
+
+    .small-meta {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #9b8f7c;
+      letter-spacing: 0.3px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 1.2rem 1.2rem 1.2rem 1.4rem;
+      }
+      .intro-background {
+        padding: 1.4rem 1.2rem;
+      }
+      .article-card h2 {
+        font-size: 1.25rem;
+      }
+      .highlight-box {
+        padding: 1rem 1.2rem;
+      }
+      .footer-note {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 首页横幅 -->
+  <div class="hero">
+    <h1>再次翻阅 · 金年会</h1>
+    <div class="sub">一份持续更新的观察笔记 &nbsp;·&nbsp; 第叁期</div>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="intro-background">
+    <p>
+      过去一年里，许多朋友通过不同渠道与我们相遇。有人把页面加入书签，隔几周回来看看；也有人只是偶然路过，之后便再没想起。这本杂志页存在的理由很简单——为那些愿意保持连接的目光，留一处安静、有呼吸感的角落。我们不追逐热点，也不制造焦虑，只把关于<a href="https://cn-space-jnh.com" style="color:#6f5e45; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px;">金年会</a>的片段、思考与记录，以温和的方式整理出来。
+    </p>
+  </div>
+
+  <!-- 三段自然介绍 -->
+  <div class="article-section">
+
+    <div class="article-card">
+      <h2>收藏——不只是书签</h2>
+      <p>
+        收藏一个页面，有时意味着给自己留一扇随时可以推开的门。我们遇到不少读者，他们会在某个周末午后重新打开这个网站，像翻一本旧杂志那样，浏览之前没注意到的段落。这种“再次访问”的节奏，让交流变得从容。
+      </p>
+      <p>
+        如果你也愿意把这里放进收藏夹，我们建议每隔几周回来一次。内容不会喧闹，但会缓慢生长，像是案头植物悄悄抽出新叶。
+      </p>
+    </div>
+
+    <div class="article-card">
+      <h2>持续关注——偶尔遇见，也很好</h2>
+      <p>
+        不必每天都来，也不必有阅读压力。持续关注的本质，是保留一种可能性——当你想了解某些与行业、审美或日常质感相关的话题时，这里有一个经过筛选和沉淀的小小索引。从项目笔记到选品手记，从对话实录到无用之美，我们不追求“必读”，只希望每篇都值得你花五分钟。
+      </p>
+      <p>
+        这种关系更像是在街角有一家总亮着暖光的小店，你知道它在那里，偶尔推门进去，总能发现点不一样的东西。
+      </p>
+    </div>
+
+    <div class="article-card">
+      <h2>再次访问——从熟悉到默契</h2>
+      <p>
+        我们观察到，那些真正对某个领域产生兴趣的人，往往会反复回到同一个信息源。不是因为那里有爆炸性新闻，而是因为那里的语气、判断和审美，逐渐与自己的内心频率产生了共鸣。再次访问，是一次次确认默契的过程。
+      </p>
+      <p>
+        这个页面本身也是一种邀请——邀请你在某个需要安静下来的时刻，重回这里，像翻开一本你已经知道走向、却仍愿意再读一遍的书。
+      </p>
+    </div>
+  </div>
+
+  <!-- 引用块 / 提示框 -->
+  <div class="highlight-box">
+    <span>📌 杂志编辑手记</span>
+    每次打开收藏夹，都是在对自己说：“我还在意这件事。” 金年会专题的内容不追求时效性，反而更愿意等待读者自己找到合适的时机。也许下一次造访，你会看到一个全新的栏目，也或许只是某段话的措辞悄然改变——变化不张扬，但始终在场。
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-note">
+    <p>如果你想重新走进这个安静的角落，</p>
+    <p>随时可以顺着记忆中的路径，回到<a href="https://cn-space-jnh.com">金年会</a>。</p>
+    <span class="small-meta">—— 没有推送提醒，没有小红点，一切由你的节奏决定。</span>
+  </div>
+
+</div>
+</body>
+</html>
